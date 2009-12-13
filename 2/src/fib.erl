@@ -25,6 +25,6 @@ sum_even(Upto) ->
 
 solution() ->
   io:format(
-    "~nSum of even fibonacci sequence numbers less than 4,000,000: ~p ~n",
-    [sum_even(4000000)]
+    "~nSum of even fibonacci sequence numbers "
+    "less than 4,000,000: ~p ~n", [sum_even(4000000)]
   ).
