@@ -31,6 +31,11 @@ task :shell => [:compile] do
   sh("erl -sname #{START_MODULE} -pa #{PWD}/ebin")
 end
 
+desc "Get the solution"
+task :run => [:compile] do
+  sh("erl -noshell -pa #{PWD}/ebin -s #{START_MODULE} solution -s init stop")
+end
+
 desc "Run Unit Tests" 
 task :test => [:compile] do
   sh("erl -noshell -pa #{PWD}/ebin -s #{TEST_MODULE} test -s init stop")
@@ -41,4 +46,4 @@ task :doc do
   sh("cd doc && erl -noshell -run edoc files ../#{SRC.join(" ../")} -run init stop")
 end
 
-task :default => :test
+task :default => :run
