@@ -19,3 +19,6 @@
                  (conj multiples number)
                  multiples)))
       multiples)))
+
+(defn sum-multiples [divisors number]
+  (reduce + (find-multiples divisors number)))

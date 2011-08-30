@@ -56,4 +56,16 @@
    (is (= [3 5 6 9 10 12 15 18]
           (find-multiples [3 5] 20))))
 
+(deftest test-sum-multiples-10
+  (is (= 23
+         (sum-multiples [3 5] 10))))
+
+(deftest test-sum-multiples-15
+  (is (= 45
+         (sum-multiples [3 5] 15))))
+
+(deftest test-sum-multiples-20
+   (is (= 78
+          (sum-multiples [3 5] 20))))
+
 (run-tests)
